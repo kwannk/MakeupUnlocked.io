@@ -1,10 +1,10 @@
 <?php
-// config/db.php
-$host = 'localhost'; // На Beget хост ВСЕГДА localhost
-$db   = 'w913892g_baza'; // Имя базы данных (из панели MySQL)
-$user = 'w913892g_baza'; // Имя пользователя (часто совпадает с именем БД)
-$pass = 'Ponchik294617.'; // Пароль, который вы задали при создании БД
-$charset = 'utf8mb4'; // Кодировка (поддерживает эмодзи и все языки)
+
+$host = 'localhost'; 
+$db   = 'w913892g_baza'; 
+$user = 'w913892g_baza'; 
+$pass = 'Ponchik294617.';
+$charset = 'utf8mb4'; 
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 $options = [
@@ -19,7 +19,7 @@ try {
     die("Ошибка БД: " . $e->getMessage());
 }
 
-// CSRF-токен
+
 function csrf_token() {
     if (empty($_SESSION['csrf_token'])) {
         $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
